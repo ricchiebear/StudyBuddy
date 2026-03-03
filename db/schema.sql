@@ -9,7 +9,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE modules (
-  tag_id INT AUTO_INCREMENT PRIMARY KEY,
+  module_id INT AUTO_INCREMENT PRIMARY KEY,
   course_id INT,
   category_name VARCHAR(100),
   level VARCHAR(50)
@@ -23,17 +23,15 @@ CREATE TABLE categories (
 CREATE TABLE listings (
   listing_id INT AUTO_INCREMENT PRIMARY KEY,
   user_id INT,
-  tag_id INT,
   title VARCHAR(150),
   start_time DATETIME,
   end_time DATETIME,
   location VARCHAR(150),
   status VARCHAR(50),
   module VARCHAR(100),
-  FOREIGN KEY (user_id) REFERENCES users(user_id),
-  FOREIGN KEY (tag_id) REFERENCES categories(tag_id)
-  
+  FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
+
 CREATE TABLE listing_tags (
   id INT AUTO_INCREMENT PRIMARY KEY,
   listing_id INT,
