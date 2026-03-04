@@ -1,3 +1,4 @@
+-- Users table
 CREATE TABLE users (
   user_id INT AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(100),
@@ -8,6 +9,7 @@ CREATE TABLE users (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+-- Modules table
 CREATE TABLE modules (
   module_id INT AUTO_INCREMENT PRIMARY KEY,
   course_id INT,
@@ -15,11 +17,13 @@ CREATE TABLE modules (
   level VARCHAR(50)
 );
 
+-- Categories table
 CREATE TABLE categories (
   tag_id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(100)
 );
 
+-- Listings table 
 CREATE TABLE listings (
   listing_id INT AUTO_INCREMENT PRIMARY KEY,
   user_id INT,
@@ -32,6 +36,7 @@ CREATE TABLE listings (
   FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
+-- Listing_Tags table 
 CREATE TABLE listing_tags (
   id INT AUTO_INCREMENT PRIMARY KEY,
   listing_id INT,
@@ -40,6 +45,7 @@ CREATE TABLE listing_tags (
   FOREIGN KEY (tag_id) REFERENCES categories(tag_id)
 );
 
+-- Streaks table
 CREATE TABLE streaks (
   streak_id INT AUTO_INCREMENT PRIMARY KEY,
   user1_id INT,
