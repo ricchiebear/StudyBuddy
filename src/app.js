@@ -17,8 +17,12 @@ app.use(express.static(path.join(__dirname, "public")));
 const db = require("./services/db");
 
 // --------------------
-// BASIC ROUTES
+// ROUTE IMPORTS
 // --------------------
+const pagesRoutes = require("./routes/pages");
+const usersRoutes = require("./routes/users");
+const listingsRoutes = require("./routes/listings");
+
 
 // Home page 
 app.get("/", (req, res) => {
@@ -211,6 +215,14 @@ app.get("/listings", async (req, res) => {
     res.status(500).send("Something went wrong loading listings");
   }
 });
+
+// --------------------
+// USE ROUTES
+// --------------------
+app.use("/", pagesRoutes);          // Home, login, register, streaks
+app.use("/users", usersRoutes);     // All user-related routes
+app.use("/listings", listingsRoutes); // Listings / study sessions
+
 
 
 // =====================================================

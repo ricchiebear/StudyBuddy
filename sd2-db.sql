@@ -2,7 +2,6 @@ DROP DATABASE IF EXISTS db;
 CREATE DATABASE db;
 USE db;
 
--- USERS TABLE
 CREATE TABLE users (
   user_id INT AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(100) NOT NULL,
@@ -17,7 +16,6 @@ INSERT INTO users (first_name, last_name, degree) VALUES
 ('Gloria', 'Amelia', 'Computing'),
 ('Sally', 'Smith', 'Digital Media');
 
--- LISTINGS TABLE
 CREATE TABLE listings (
   listing_id INT AUTO_INCREMENT PRIMARY KEY,
   user_id INT,
