@@ -22,6 +22,7 @@ const db = require("./services/db");
 const pagesRoutes = require("./routes/pages");
 const usersRoutes = require("./routes/users");
 const listingsRoutes = require("./routes/listings");
+const tagsRoutes = require("./routes/tags");
 
 
 // Home page 
@@ -222,6 +223,7 @@ app.get("/listings", async (req, res) => {
 app.use("/", pagesRoutes);          // Home, login, register, streaks
 app.use("/users", usersRoutes);     // All user-related routes
 app.use("/listings", listingsRoutes); // Listings / study sessions
+app.use("/tags", tagsRoutes); 
 
 
 

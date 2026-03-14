@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h2 Subjects
+  p Choose a subject to view available study sessions.
+
+  if tags.length === 0
+    p No subjects available.
+  else
+    ul
+      each tag in tags
+        li
+          a(href=`/tags/${tag.tag_id}`)= tag.name
