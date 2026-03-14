@@ -3,13 +3,24 @@ extends layout
 block content
   //Olivia: layout of listing page editted to show study sessions:
   h2 Study Listings
-    
-    if listings.length === 0 
-   p No listings available yet.
-    else
-      ul
-            each listing in listings
-             li
-              strong #{listing.title}
-              |  - #{listing.module}
-              |  - #{listing.location}
+  p Find study partners or browse available study sessions.
+
+  if listings.length === 0
+    p No listings available yet.
+  else
+    ul
+      each listing in listings
+        li
+          h3= listing.title
+          p
+            strong Module:
+            |  #{listing.module}
+          p
+            strong Location:
+            |  #{listing.location}
+          p
+            strong Start time:
+            |  #{listing.start_time}
+          p
+            strong Status:
+            |  #{listing.status}
