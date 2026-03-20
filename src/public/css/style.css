@@ -3,15 +3,15 @@
    ========================= */
 
 :root{
-  --bg: #f6f7fb;
-  --text: #111827;
-  --muted: #6b7280;
-  --card: #ffffff;
-  --border: #e5e7eb;
-  --shadow: 0 10px 25px rgba(0,0,0,0.06);
+  --bg: #0a0f1f;
+  --text: #e6e9f2;
+  --muted: #9aa3b2;
+  --card: #11162a;
+  --border: #1c233a;
+  --shadow: 0 10px 30px rgba(0,0,0,0.5);
   --radius: 14px;
-  --accent: #2563eb;
-  --accent2: #7c3aed;
+  --accent: #4f7cff;
+  --accent2: #a855f7;
 }
 
 * { box-sizing: border-box; }
@@ -20,8 +20,8 @@ body{
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--text);
-  background: radial-gradient(1200px 600px at 20% 0%, #eef2ff 0%, transparent 60%),
-              radial-gradient(900px 500px at 100% 20%, #f5e9ff 0%, transparent 55%),
+  background: radial-gradient(1200px 600px at 20% 0%, #1a2340 0%, transparent 60%),
+              radial-gradient(900px 500px at 100% 20%, #2b145a 0%, transparent 55%),
               var(--bg);
   line-height: 1.55;
 }
@@ -53,10 +53,10 @@ nav{
   flex-wrap: wrap;
   align-items: center;
   padding: 10px 12px;
-  background: rgba(255,255,255,0.7);
+  background: rgba(17,22,42,0.7);
   border: 1px solid var(--border);
   border-radius: 999px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
 }
 
 nav a{
@@ -140,11 +140,11 @@ th, td{
 }
 
 th{
-  background: #f3f4f6;
+  background: #1c233a;
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #374151;
+  color: #cbd5e1;
 }
 
 /* forms */
@@ -164,7 +164,8 @@ input, select, textarea{
   padding: 10px 12px;
   border: 1px solid var(--border);
   border-radius: 12px;
-  background: rgba(255,255,255,0.9);
+  background: #0f172a;
+  color: var(--text);
   outline: none;
 }
 
@@ -210,8 +211,8 @@ button:hover, .btn:hover{
 }
 
 .listing-card{
-  background: #111827;
-  border: 1px solid #374151;
+  background: #0f172a;
+  border: 1px solid #1c233a;
   border-radius: 12px;
   width: 100%;
   padding: 20px;
