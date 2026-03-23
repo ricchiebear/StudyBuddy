@@ -1,7 +1,7 @@
 -- seed.sql
 
 -- 1) USERS
-INSERT INTO users (first_name, last_name, password, degree, session_ids)
+INSERT INTO users (first_name, last_name, password, degree, session_ids, email)
 VALUES
 ('Azeez', 'Bello', 'Az23bstar67', 'Cybersecurity', '1,2', 'AzeezBello@roehampton.ac.uk'),
 ('Olayinka', 'Jibola', 'OJ57ola56-4', 'Business & Computing', '3', 'OlayinkaJibola@roehampton.ac.uk'),
