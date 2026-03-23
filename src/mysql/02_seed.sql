@@ -19,10 +19,10 @@ INSERT INTO tags (name) VALUES
 
 -- 3) MODULES
 INSERT INTO modules (course_id, module_name, degree, level) VALUES
-(101, 'Networking','', 'Beginner'),
-(102, 'Marketing', '','Intermediate'),
-(103, 'Web Development','', 'Beginner'),
-(104, 'Databases', '', 'Advanced');
+(101, 'Networking','Cyber Security', 'Beginner'),
+(102, 'Marketing','Business and Computing','Intermediate'),
+(103, 'Web Development','Digital Media', 'Beginner'),
+(104, 'Databases', 'Computer Science', 'Advanced');
 
 -- 4) LISTINGS
 INSERT INTO listings (user_id, title, start_time, end_time, location, status, module)
