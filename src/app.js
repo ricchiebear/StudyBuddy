@@ -245,27 +245,10 @@ app.get("/listings/:id", requireLogin, async (req, res) => {
 
 
 // =========================
-// TAGS PAGE
+// SUBJECTS PAGE
 // =========================
-app.get("/tags", requireLogin, async (req, res) => {
 
-  try {
-
-    const [tags] = await db.query(
-      "SELECT DISTINCT degree FROM users ORDER BY degree ASC"
-    );
-
-    res.render("tags", {
-      title: "Tags",
-      tags
-    });
-
-  } catch (err) {
-    console.error("Tags error:", err);
-    res.status(500).send("Error loading tags.");
-  }
-
-});
+app.use("/subjects", require("./routes/subjects"));
 
 
 // =========================

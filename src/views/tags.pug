@@ -1,11 +1,44 @@
 extends layout
 
 block content
-  h2 Tags / Categories
 
-  if tags.length === 0
-    p No tags available yet.
+  if !selectedDegree
+    
+
+    .degree-container
+      each item in degrees
+        a.degree-card(href=`/subjects/${encodeURIComponent(item.degree)}`)
+
+          .degree-icon
+            if item.degree === 'Artificial Intelligence'
+              img(src="/images/AI_Icon.jpg", alt="AI")
+            else if item.degree === 'Business and Computing'
+              img(src="/images/businessComputingIcon.jpg", alt="Business")
+            else if item.degree === 'Chemistry'
+              img(src="/images/chemistryIcon.jpg", alt="Chemistry")
+            else if item.degree === 'Computer Science'
+              img(src="/images/computerIcon.jpg", alt="Computer Science")
+            else if item.degree === 'Cyber Security'
+              img(src="/images/cyberIcon.jpg", alt="Cyber Security")
+            else if item.degree === 'Digital Media'
+              img(src="/images/digitalMediaIcon.jpg", alt="Digital Media")
+            else if item.degree === 'Law'
+              img(src="/images/lawIcon.jpg", alt="Law")
+            else if item.degree === 'Psychology'
+              img(src="/images/psychologyIcon.jpg", alt="Psychology")
+            else
+              img(src="/images/default.png", alt="Default")
+
+          p.degree-name= item.degree
+
+
   else
-    ul
-      each tag in tags
-        li= tag.degree
+    h2 Modules for #{selectedDegree}
+
+    a(href="/subjects") ← Back to Degrees
+
+    .module-container
+      each module in modules
+        .module-card
+          h3= module.module_name
+          p Level: #{module.level}
