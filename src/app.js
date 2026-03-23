@@ -4,6 +4,8 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const session = require("express-session");
+const notificationsRouter = require("./routes/notifications");
+const messagesRouter = require("./routes/messages");
 
 // Parse form data
 app.use(express.urlencoded({ extended: true }));
@@ -27,6 +29,9 @@ app.use((req, res, next) => {
   next();
 }); 
 
+// Messge and notification registering 
+app.use("/notifications", notificationsRouter);
+app.use("/messages", messagesRouter);
 // View engine
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");

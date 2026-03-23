@@ -5,26 +5,26 @@ html
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title= title || "StudyBuddy"
     link(rel="stylesheet" href="/css/style.css")
+
   body
     header
       h1 StudyBuddy
       nav
         if user
-          a(href="/") Home
-          |  · 
-          a(href="/users") Buddies
-          |  · 
-          a(href="/listings") Study Sessions
-          |  · 
           a(href="/tags") Subjects
-          |  · 
+          | · 
           a(href="/streaks") Streaks
-          |  · 
+          | · 
+          a(href="/notifications") Notifications
+          | · 
+          a(href="/messages") Messages
+          | · 
           a(href="/logout") Logout
         else
           a(href="/login") Login
-          |  · 
+          | · 
           a(href="/register") Register
+
     hr
 
     main
