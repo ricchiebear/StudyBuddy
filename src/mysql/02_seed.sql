@@ -145,25 +145,26 @@ VALUES
 (4, 2, 'pending'),
 (5, 3, 'declined');
 
-INSERT INTO notifications (user_id, message, type, is_read) VALUES
+INSERT INTO notifications (user_id, message, is_read)
+VALUES
 
 -- Requests sent to session owners
-(1, 'Olayinka requested to join your session "Network Security Revision"', 'join_request', FALSE),
-(1, 'Tom requested to join your session "Network Security Revision"', 'join_request', TRUE),
-(2, 'Gloria requested to join your session "Marketing Exam Prep"', 'join_request', FALSE),
-(3, 'Sally requested to join your session "Web Dev Pair Programming"', 'join_request', TRUE),
-(1, 'Azeez requested to join your session "Neural Networks Study Group"', 'join_request', FALSE),
+(1, 'Olayinka requested to join your session "Network Security Revision"', FALSE),
+(1, 'Tom requested to join your session "Network Security Revision"', TRUE),
+(2, 'Gloria requested to join your session "Marketing Exam Prep"', FALSE),
+(3, 'Sally requested to join your session "Web Dev Pair Programming"', TRUE),
+(1, 'Azeez requested to join your session "Neural Networks Study Group"', FALSE),
 
---  Accepted notifications (sent to users)
-(3, 'Your request to join "Network Security Revision" was accepted', 'accepted', FALSE),
+-- Accepted notifications
+(3, 'Your request to join "Network Security Revision" was accepted', FALSE),
 
--- Declined notifications (sent to users)
-(5, 'Your request to join "Web Dev Pair Programming" was declined', 'declined', FALSE),
+-- Declined notifications
+(5, 'Your request to join "Web Dev Pair Programming" was declined', FALSE),
 
---  Reminder examples
-(1, 'Reminder: Your session "Neural Networks Study Group" starts soon', 'reminder', FALSE),
-(2, 'Reminder: Your session "Marketing Exam Prep" starts soon', 'reminder', TRUE),
+-- Reminder examples
+(1, 'Reminder: Your session "Neural Networks Study Group" starts soon', FALSE),
+(2, 'Reminder: Your session "Marketing Exam Prep" starts soon', TRUE),
 
 -- Session ended examples
-(1, 'Your session "Network Security Revision" has ended', 'ended', TRUE),
-(3, 'Your session "Web Dev Pair Programming" has ended', 'ended', FALSE);
+(1, 'Your session "Network Security Revision" has ended', TRUE),
+(3, 'Your session "Web Dev Pair Programming" has ended', FALSE);

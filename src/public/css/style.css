@@ -304,6 +304,152 @@ button:hover, .btn:hover{
   font-weight: 600;
 }
 
+/* Container */
+.notifications-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Header */
+.notifications-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.notifications-header h2 {
+  margin: 0;
+}
+
+/* Mark all button */
+.mark-all-btn {
+  background: #d4edda;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.mark-all-btn:hover {
+  background: #c3e6cb;
+}
+
+/* Tabs */
+.tabs {
+  margin: 15px 0;
+}
+
+.tab {
+  margin-right: 15px;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.tab.active {
+  font-weight: bold;
+  border-bottom: 2px solid #4caf50;
+  color: #fff;
+}
+
+/* Notification card */
+.notification-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  background: #1e1e2f;
+  color: #fff;
+  transition: 0.2s ease;
+}
+
+.notification-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Left icon */
+.notif-left {
+  margin-right: 12px;
+  font-size: 20px;
+}
+
+/* Content */
+.notif-content {
+  flex: 1;
+}
+
+.message {
+  margin: 0;
+  font-size: 14px;
+}
+
+.time {
+  font-size: 12px;
+  color: #bbb;
+}
+
+/* Actions */
+.notif-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Badge */
+.badge {
+  background: #4caf50;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+/* Delete button */
+.delete-btn {
+  background: #f8d7da;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #a94442;
+}
+
+.delete-btn:hover {
+  background: #f5c6cb;
+}
+
+/* ========================= */
+/* Notification TYPES */
+/* ========================= */
+
+/* Join request */
+.notification-card.join_request {
+  background: #2c3e50;
+}
+
+/* Accepted */
+.notification-card.accepted {
+  background: #2e7d32;
+}
+
+/* Declined */
+.notification-card.declined {
+  background: #c62828;
+}
+
+/* Reminder */
+.notification-card.reminder {
+  background: #f9a825;
+}
+
+/* Ended */
+.notification-card.ended {
+  background: #616161;
+}
 
 
 /* mobile tweaks */
