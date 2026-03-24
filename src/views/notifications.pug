@@ -1,0 +1,48 @@
+extends layout
+ 
+block content
+ 
+  .notifications-container
+ 
+    // Header
+    .notifications-header
+      h2 Notifications
+      p #{notifications.filter(n => !n.is_read).length} unread notifications
+ 
+      form(method="POST", action="/notifications/mark-all-read")
+        button.mark-all-btn(type="submit") Mark all as read
+ 
+    // Tabs (static for now)
+    .tabs
+      span.tab.active All
+      span.tab New
+      span.tab Unread
+ 
+    // Notifications list
+    each notif in notifications
+      .notification-card(class=notif.type)
+ 
+        .notif-left
+          if notif.type === "join_request"
+            span.icon 📩
+          else if notif.type === "accepted"
+            span.icon ✅
+          else if notif.type === "declined"
+            span.icon ❌
+          else if notif.type === "reminder"
+            span.icon ⏰
+          else if notif.type === "ended"
+            span.icon 📌
+          else
+            span.icon 🔔
+ 
+        .notif-content
+          p.message= notif.message
+          small.time= notif.created_at
+ 
+        .notif-actions
+          if !notif.is_read
+            span.badge New
+ 
+          form(method="POST", action=`/notifications/${notif.notification_id}/delete`)
+            button.delete-btn(type="submit") Delete
