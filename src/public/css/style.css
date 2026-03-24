@@ -256,6 +256,56 @@ button:hover, .btn:hover{
   display: inline-block; 
 }
 
+.degree-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.degree-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.degree-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+
+.degree-icon {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.degree-icon img {
+  width: 80px;        /* 🔥 KEY FIX */
+  height: 80px;       /* 🔥 KEY FIX */
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.degree-name {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+
 /* mobile tweaks */
 @media (max-width: 520px){
   nav{
