@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("../services/db");
 const bcrypt = require("bcrypt");
+const crypto = require("crypto");
 
 
 function requireLogin(req, res, next) {
@@ -109,6 +110,89 @@ router.post("/register", async (req, res) => {
   }
 });
 
+// Forgot Password Page 
+
+router.get("/forgot-password", (req, res) => {
+  res.render("forgot-password");
+});
+
+//F.P Email Submission
+router.post("/forgot-password", async (req, res) => {
+  const { email } = req.body;
+
+  const [users] = await db.query(
+    "SELECT user_id FROM users WHERE email = ?",
+    [email]
+  );
+
+  if (users.length === 0) {
+    return res.send("No account with that email.");
+  }
+
+  const userId = users[0].user_id;
+
+  // create secure token
+  const token = crypto.randomBytes(32).toString("hex");
+
+  const expires = new Date(Date.now() + 1000 * 60 * 30); // 30 mins
+
+  await db.query(
+    "INSERT INTO password_resets (user_id, token, expires_at) VALUES (?, ?, ?)",
+    [userId, token, expires]
+  );
+
+  const resetLink = `http://localhost:3000/reset-password?token=${token}`;
+
+  // FOR NOW: show link instead of email
+  res.send(`<a href="${resetLink}">Reset Password</a>`);
+});
+
+// Reset Password Page
+router.get("/reset-password", async (req, res) => {
+  const { token } = req.query;
+
+  const [rows] = await db.query(
+    "SELECT * FROM password_resets WHERE token = ? AND expires_at > NOW()",
+    [token]
+  );
+
+  if (rows.length === 0) {
+    return res.send("Invalid or expired token");
+  }
+
+  res.render("reset-password", { token });
+});
+
+//Save New Password:
+
+router.post("/reset-password", async (req, res) => {
+  const { token, password } = req.body;
+
+  const [rows] = await db.query(
+    "SELECT * FROM password_resets WHERE token = ? AND expires_at > NOW()",
+    [token]
+  );
+
+  if (rows.length === 0) {
+    return res.send("Invalid or expired token");
+  }
+
+  const userId = rows[0].user_id;
+
+  const hashedPassword = await bcrypt.hash(password, 10);
+
+  await db.query(
+    "UPDATE users SET password = ? WHERE user_id = ?",
+    [hashedPassword, userId]
+  );
+
+  await db.query(
+    "DELETE FROM password_resets WHERE user_id = ?",
+    [userId]
+  );
+
+  res.send("✅ Password reset successful!");
+});
 
 // LOGOUT
 
