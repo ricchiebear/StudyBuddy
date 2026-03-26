@@ -1,19 +1,5 @@
 -- seed.sql
 
--- 1) USERS
-INSERT INTO users (first_name, last_name, password, degree, session_ids, email)
-VALUES
-('Azeez', 'Bello', 'Az23bstar67', 'Cybersecurity', '1,2', 'AzeezBello@roehampton.ac.uk'),
-('Olayinka', 'Jibola', 'OJ57ola56-4', 'Business & Computing', '3', 'OlayinkaJibola@roehampton.ac.uk'),
-('Tom', 'Francis', 'TO23fr560!!', 'Computer Science', '4', 'TomFrancis@roehampton.ac.uk'),
-('Gloria', 'Amelia', 'AG89pass-5', 'Computing', '5', 'GloriaAmelia@roehampton.ac.uk'),
-('Sally', 'Smith', 'SLLS09127A2', 'Digital Media', '6', 'SallySmith@roehampton.ac.uk'),
-('Liam', 'Johnson', 'LJ46gdhA12', 'Artificial Intelligence', '7', 'LiamJohnson@roehampton.ac.uk'),
-('Sara', 'Khan', 'SK3746hfg7', 'Artificial Intelligence', '8', 'SaraKhan@roehampton.ac.uk'),
-('Jake', 'Williams', 'JW476gh67', 'Chemistry', '9', 'JakeWilliams@roehampton.ac.uk'),
-('Emily', 'Brown', 'EB348756hgf27', 'Law', '10', 'EmilyBrown@roehampton.ac.uk'),
-('Daniel', 'Taylor', 'DT84756hfg98', 'Psychology', '11', 'DanielTaylor@roehampton.ac.uk'),
-('Chloe', 'Evans', 'CEfeihf56', 'Computer Science', '12', 'ChloeEvans@roehampton.ac.uk');
 
 -- 2) TAGS
 INSERT INTO tags (sessionType) VALUES

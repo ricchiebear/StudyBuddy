@@ -2,10 +2,10 @@ CREATE TABLE users (
   user_id INT AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(100),
   last_name VARCHAR(100),
-  password VARCHAR(255),
+  password VARCHAR(255) NOT NULL,
   degree VARCHAR(100),
   session_ids VARCHAR(255),
-  email VARCHAR(150),
+  email VARCHAR(150) UNIQUE NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
